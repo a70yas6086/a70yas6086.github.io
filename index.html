@@ -535,9 +535,6 @@ function abrirRcp(t){
   if(!t){alert('Erro');return}
   $id('rcpT').textContent=t.tipo==='c'?'Comprovante de recebimento':'Comprovante de pagamento';
   $id('rcpDt').textContent=t.dt||'';
-  var l=[
-    ['Valor',money(t.vl)],
-    ['Pagador',t.pagNome||S.nome],
       var l=[
     ['Valor',money(t.vl)],
     ['Pagador',t.pagNome||S.nome],
