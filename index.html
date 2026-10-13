@@ -6,207 +6,255 @@
 <meta name="theme-color" content="#820ad1">
 <title>Nubank</title>
 <style>
-:root{--nu:#820ad1;--bg:#0e0e12;--panel:#1a1a22;--panel2:#20202a;--text:#fff;--muted:#a3a3ad;--brd:#2e2e3a;--grn:#a5f36c;--red:#ff6b78}
+:root{--nu:#820ad1;--bg:#0b0b0f;--pl:#1a1a1e;--mut:#a3a3ad;--brd:#26262d;--grn:#36c98f}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif;padding-bottom:100px}
+body{background:var(--bg);color:#fff;font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif;padding-bottom:100px}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer;border:0;background:none;padding:0}
-input,textarea{outline:none}
-header{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:linear-gradient(180deg,#2b0a45,#1a0629);border-bottom:1px solid #3d1a5e}
-.brand{display:flex;align-items:center;gap:10px}
-.nu-logo{width:56px;height:32px;color:#fff}
-.brand-text{font-size:18px;font-weight:800;letter-spacing:-.5px}
-.pill{font-size:10px;font-weight:800;color:#e5c9ff;border:1px solid #6b2ea0;background:#3d1160;padding:6px 10px;border-radius:20px}
-main{max-width:820px;margin:auto;padding:18px 16px 40px}
-.warning{padding:12px;border:1px solid #6b2ea0;background:#2a0f45;color:#e5c9ff;border-radius:12px;font-size:12px;line-height:1.5;margin-bottom:18px}
-h1{font-size:26px;font-weight:800;margin:8px 0 6px;letter-spacing:-.5px}
-h2{font-size:18px;font-weight:800;margin:0 0 14px}
-p{line-height:1.55}
-.muted{color:var(--muted);font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0}
-.action{background:var(--panel2);border:1px solid var(--brd);color:var(--text);border-radius:14px;padding:14px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;min-height:80px;justify-content:center;cursor:pointer;transition:transform .1s}
-.action:active{transform:scale(.95);background:#2f2f3c}
-.action svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.action strong{font-size:11.5px;font-weight:600;line-height:1.2}
-.card{background:var(--panel);border:1px solid var(--brd);padding:20px;border-radius:18px;margin:14px 0}
-.balance-card{background:linear-gradient(135deg,#4a1a78 0%,#2b0a45 60%,#1a0629 100%);border-color:#5c2490;position:relative;overflow:hidden}
-.balance-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.balance-label{font-size:12px;color:#dcc4ff;font-weight:600;text-transform:uppercase;letter-spacing:1px}
-.balance{font-size:36px;font-weight:850;margin:14px 0 6px;letter-spacing:-1px}
-.balance-foot{font-size:12px;color:#c4a8e8}
-.eye{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer}
-.eye svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.8}
-.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.link{color:#c98eff;font-size:13px;font-weight:700}
-.tx{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--brd)}
-.tx:last-child{border-bottom:0}
-.tx .i{flex:1;min-width:0}
-.tx .t{font-size:14px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.tx .s{font-size:12px;color:var(--muted);margin-top:3px}
-.tx .v{font-weight:800;white-space:nowrap}
-.tx .v.in{color:var(--grn)}
-.tx .v.out{color:var(--red)}
-.tx .vb{font-size:11.5px;color:#c98eff;font-weight:600;cursor:pointer;margin-top:6px;display:inline-block}
-.empty{padding:30px 10px;color:var(--muted);text-align:center;font-size:13px}
+input,textarea,select{outline:none}
+header{background:linear-gradient(180deg,#820ad1,#6a08ac);padding:18px 20px 24px;position:sticky;top:0;z-index:20}
+.hr{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.hl{display:flex;align-items:center;gap:16px}
+.av{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.av svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.8}
+.nu-logo{width:58px;height:34px;color:#fff}
+.hi{display:flex;gap:20px}
+.hi button{color:#fff;width:28px;height:28px}
+.hi svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.greet{color:#fff;font-size:18px;font-weight:600;margin-top:20px;text-transform:uppercase;letter-spacing:.3px}
+main{max-width:820px;margin:auto}
+.sb{padding:22px 20px 8px}
+.sbl{font-size:15px;display:flex;align-items:center;justify-content:space-between}
+.sbl span:last-child{opacity:.5;font-size:22px}
+.saldo{font-size:30px;font-weight:700;margin-top:10px;letter-spacing:-.5px;display:inline-block;cursor:pointer}
+.vinc{display:inline-flex;align-items:center;gap:8px;background:var(--pl);border:1px solid #2a2a32;border-radius:22px;padding:10px 16px;font-size:14px;font-weight:600;margin-top:16px;cursor:pointer;color:#fff}
+.vinc svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2.2}
+.qk{display:flex;gap:8px;overflow-x:auto;padding:24px 14px 10px;scrollbar-width:none}
+.qk::-webkit-scrollbar{display:none}
+.qk button{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:88px;flex-shrink:0;cursor:pointer}
+.qk .c{width:70px;height:70px;border-radius:50%;background:var(--pl);display:grid;place-items:center;position:relative}
+.qk .c svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.qk .bd{position:absolute;bottom:-5px;background:var(--nu);color:#fff;font-size:9px;font-weight:800;padding:2px 6px;border-radius:5px;letter-spacing:.5px}
+.qk span:last-child{font-size:12px;text-align:center;line-height:1.2;font-weight:500;color:#fff}
+.pl{display:flex;align-items:center;gap:16px;background:var(--pl);border-radius:16px;padding:20px;margin:10px 18px;cursor:pointer}
+.pl svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.7;flex-shrink:0}
+.pl .t{flex:1;font-size:15px;font-weight:600;color:#fff}
+.bn{background:linear-gradient(135deg,#4a1a78,#2b0a45);border:1px solid #5c2490;border-radius:18px;padding:22px;margin:14px 18px;display:flex;align-items:center;gap:16px;cursor:pointer}
+.bn .txt{flex:1;font-size:14.5px;line-height:1.5;color:#fff}
+.bn .txt b{font-weight:800}
+.bn svg{width:36px;height:36px;stroke:#c98eff;fill:none;stroke-width:2}
+.st{font-size:18px;font-weight:700;margin:26px 20px 12px;padding-top:16px;border-top:1px solid var(--brd)}
+.ccsec{margin:0 18px 14px;background:var(--pl);border-radius:16px;padding:20px}
+.ccsec .lb{font-size:13px;color:var(--mut);margin-bottom:6px}
+.ccsec .vl{font-size:18px;font-weight:700}
+.ccsec .row{display:flex;justify-content:space-between}
+.prog{height:6px;background:#2a2a30;border-radius:3px;overflow:hidden;margin-top:12px}
+.progb{height:100%;background:#820ad1;border-radius:3px;width:0}
 .view{display:none}
 .view.active{display:block}
-.field{margin-bottom:14px}
-.field label{display:block;font-size:13px;font-weight:600;color:#d5d5dc;margin-bottom:7px}
-.field input,.field textarea{width:100%;background:#15151b;border:1.5px solid #33333f;border-radius:12px;padding:14px;font-size:15px}
-.field input:focus,.field textarea:focus{border-color:#a54de0}
-.field textarea{min-height:70px;resize:vertical;font-family:inherit}
-.field input::placeholder,.field textarea::placeholder{color:#6d6d78}
-.form{padding:0}
-.btn{background:var(--nu);color:#fff;border:0;border-radius:14px;padding:15px;font-weight:800;width:100%;font-size:15px;margin-top:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
-.btn:hover{background:#6a08ac}
+h1{font-size:24px;margin:22px 20px 14px;font-weight:800}
+.f{margin-bottom:14px}
+.f label{display:block;font-size:13px;font-weight:600;color:#d5d5dc;margin-bottom:7px}
+.f input,.f textarea,.f select{width:100%;background:#15151b;border:1.5px solid #33333f;border-radius:12px;padding:14px;font-size:15px}
+.f input:focus,.f textarea:focus{border-color:#a54de0}
+.f textarea{min-height:70px;resize:vertical;font-family:inherit}
+.f input::placeholder,.f textarea::placeholder{color:#6d6d78}
+.form{padding:0 20px}
+.btn{background:var(--nu);color:#fff;border-radius:14px;padding:15px;font-weight:800;width:100%;font-size:15px;margin-top:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
 .btn.sec{background:#26262d}
 .btn.danger{background:#3a1a22;color:#ffb3bd}
-nav{position:fixed;bottom:0;left:0;right:0;z-index:30;background:rgba(15,15,20,.96);backdrop-filter:blur(20px);border-top:1px solid var(--brd);display:grid;grid-template-columns:repeat(5,1fr);padding:8px 6px 12px}
-nav button{color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10.5px;font-weight:600;padding:6px 0;position:relative}
+.tx{display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--brd)}
+.tx:last-child{border-bottom:0}
+.tx .i{flex:1;min-width:0}
+.tx .t{font-size:14px;font-weight:700}
+.tx .s{font-size:12px;color:var(--mut);margin-top:3px}
+.tx .v{font-weight:800;white-space:nowrap}
+.tx .v.in{color:var(--grn)}
+.tx .v.out{color:#ff6b78}
+.tx .vb{font-size:11.5px;color:#c98eff;font-weight:600;cursor:pointer;margin-top:6px;display:inline-block}
+.empty{padding:32px 20px;color:var(--mut);text-align:center;font-size:13.5px;line-height:1.6}
+nav{position:fixed;bottom:0;left:0;right:0;background:rgba(11,11,15,.96);backdrop-filter:blur(20px);border-top:1px solid var(--brd);display:grid;grid-template-columns:repeat(5,1fr);padding:10px 6px 14px;z-index:30}
+nav button{color:var(--mut);display:flex;flex-direction:column;align-items:center;gap:5px;font-size:10.5px;font-weight:600;padding:4px 0;position:relative;cursor:pointer}
 nav button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 nav button.active{color:#fff}
-.card-virtual{border-radius:18px;padding:22px;min-height:190px;background:linear-gradient(135deg,#820ad1,#51118e 65%,#28133e);display:flex;flex-direction:column;justify-content:space-between;margin:14px 0}
-.card-virtual .top{display:flex;justify-content:space-between;align-items:center}
-.card-virtual .br{color:#fff;font-weight:900;font-size:24px;letter-spacing:-1.5px}
-.card-virtual .ch{width:36px;height:26px;border-radius:6px;background:linear-gradient(135deg,#e8d8a4,#a88c55);border:1px solid #f2d9a0}
-.card-virtual .nm{font-size:19px;letter-spacing:3px;font-weight:600;margin:20px 0}
-.card-virtual .bt{display:flex;justify-content:space-between;font-size:11px;color:#e0c8ff;text-transform:uppercase}
-.card-virtual .bt b{display:block;color:#fff;font-size:13px;margin-top:4px}
-/* COMPROVANTE BRANCO */
+nav button.active::before{content:"";position:absolute;top:-4px;left:50%;transform:translateX(-50%);width:20px;height:3px;border-radius:2px;background:var(--nu)}
+.crd{border-radius:20px;padding:24px;min-height:200px;background:linear-gradient(135deg,#820ad1,#51118e 65%,#28133e);margin:18px;display:flex;flex-direction:column;justify-content:space-between}
+.crd .tp{display:flex;justify-content:space-between;align-items:center}
+.crd .br{color:#fff;font-weight:900;font-size:24px;letter-spacing:-1.5px}
+.crd .ch{width:38px;height:28px;border-radius:6px;background:linear-gradient(135deg,#e8d8a4,#a88c55);border:1px solid #f2d9a0}
+.crd .nm{font-size:19px;letter-spacing:3px;font-weight:600;margin:22px 0}
+.crd .bt{display:flex;justify-content:space-between;font-size:11px;color:#e0c8ff;text-transform:uppercase}
+.crd .bt b{display:block;color:#fff;font-size:13px;margin-top:4px}
+/* COMPROVANTE FIEL À IMAGEM */
 .rcpt{position:fixed;inset:0;background:#fff;color:#111;z-index:50;overflow-y:auto;display:none}
 .rcpt.on{display:block}
-.rcp{max-width:600px;margin:auto;padding:24px 22px 60px}
-.rcp .bk{background:#f0f0f2;border-radius:10px;padding:10px 16px;font-size:13px;font-weight:600;margin-bottom:26px;color:#333;display:inline-block;cursor:pointer}
-.rcp .lg{color:#820ad1;font-size:38px;font-weight:900;letter-spacing:-3px;margin-bottom:18px;line-height:1}
-.rcp h2{font-size:26px;font-weight:800;margin-bottom:6px;color:#111;letter-spacing:-.5px}
-.rcp .dt{font-size:13px;color:#999;text-transform:uppercase;margin-bottom:32px;font-weight:500}
-.rcp .row{display:flex;justify-content:space-between;padding:16px 0;font-size:15px;border-bottom:1px solid #f0f0f2}
-.rcp .row .l{color:#111;font-weight:600}
-.rcp .row .v{color:#666;text-align:right;max-width:62%;word-break:break-word;font-weight:500}
-.rcp .box{background:#f5f5f7;border-radius:12px;padding:22px;margin-top:28px;font-size:13px;line-height:1.65;color:#444}
-.rcp .box b{color:#111;display:block;font-weight:700}
-.rcp .box .cj{display:block;overflow:hidden;white-space:nowrap;width:190px}
-.rcp .box .mt{display:block;margin-top:18px}
-.rcp .box .at{display:block;color:#111;word-break:break-all;font-size:12px;margin-top:3px}
-.rcp .box .lk{color:#820ad1;font-weight:700;text-decoration:none;display:inline-block;margin-top:8px}
-.rcp .save{background:#820ad1;color:#fff;border-radius:14px;padding:14px;font-weight:700;width:100%;font-size:14px;margin-top:26px;cursor:pointer}
+.rcp{max-width:620px;margin:auto;padding:26px 24px 60px;font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif}
+.rcp .bk{background:#f0f0f2;border-radius:10px;padding:10px 16px;font-size:13px;font-weight:600;margin-bottom:28px;color:#333;display:inline-block;cursor:pointer}
+.rcp .lg{color:#999;font-size:42px;font-weight:900;letter-spacing:-4px;margin-bottom:20px;line-height:1}
+.rcp h2{font-size:32px;font-weight:800;margin-bottom:8px;color:#111;letter-spacing:-.8px;line-height:1.15}
+.rcp .dt{font-size:14px;color:#a0a0a0;text-transform:uppercase;margin-bottom:32px;font-weight:500;letter-spacing:.3px}
+.rcp .recipient{font-size:24px;font-weight:800;color:#111;margin-bottom:26px;line-height:1.2;word-break:break-word}
+.rcp .row{display:flex;justify-content:space-between;gap:20px;padding:18px 0;font-size:17px;border-bottom:1px solid #f0f0f2}
+.rcp .row .l{color:#111;font-weight:700}
+.rcp .row .v{color:#7a7a7a;text-align:right;max-width:60%;word-break:break-word;font-weight:500}
+.rcp .box{background:#f5f5f7;border-radius:12px;padding:24px;margin-top:32px;font-size:14px;line-height:1.7;color:#555}
+.rcp .box b{color:#111;display:block;font-weight:700;font-size:15px}
+.rcp .box .cj{display:block;overflow:hidden;white-space:nowrap;width:220px;margin-top:2px}
+.rcp .box .mt{display:block;margin-top:22px;font-weight:700;color:#111}
+.rcp .box .at{display:block;color:#333;word-break:break-all;font-size:13px;margin-top:4px;font-family:ui-monospace,Menlo,monospace}
+.rcp .box .help{display:block;margin-top:20px;color:#666}
+.rcp .box .lk{color:#820ad1;font-weight:700;text-decoration:none;display:inline-block;margin-top:8px;font-size:15px}
+.rcp .save{background:#820ad1;color:#fff;border-radius:14px;padding:16px;font-weight:700;width:100%;font-size:15px;margin-top:32px;cursor:pointer;border:0}
 .toast{position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#f5f1fa;color:#202027;padding:14px 20px;border-radius:14px;font-size:13.5px;font-weight:600;z-index:100;display:none;max-width:90%;box-shadow:0 12px 40px rgba(0,0,0,.5);text-align:center}
 .toast.on{display:block}
 .toast.err{background:#ffe3e5;color:#751a28}
-@media(min-width:600px){.grid{grid-template-columns:repeat(4,1fr)}.balance{font-size:42px}}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="brand">
-    <svg class="nu-logo" viewBox="0 0 104 65" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-      <path d="M0 65V27C0 12 12 0 27 0C42 0 52 12 52 27V65H38V27C38 20 33 14 26 14C19 14 14 20 14 27V65Z"/>
-      <path d="M52 0V38C52 53 64 65 78 65C92 65 104 53 104 38V0H90V38C90 45 85 51 78 51C71 51 66 45 66 38V0Z"/>
-    </svg>
-    <span class="brand-text">Nubank</span>
+  <div class="hr">
+    <div class="hl">
+      <div class="av" onclick="go('perfil')">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.3 3.5-7 8-7s8 2.7 8 7"></path></svg>
+      </div>
+      <svg class="nu-logo" viewBox="0 0 104 65" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <path d="M0 65V27C0 12 12 0 27 0C42 0 52 12 52 27V65H38V27C38 20 33 14 26 14C19 14 14 20 14 27V65Z"/>
+        <path d="M52 0V38C52 53 64 65 78 65C92 65 104 53 104 38V0H90V38C90 45 85 51 78 51C71 51 66 45 66 38V0Z"/>
+      </svg>
+    </div>
+    <div class="hi">
+      <button onclick="tgSaldo()"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+      <button onclick="tst('Central de ajuda')"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3"></path></svg></button>
+      <button onclick="tst('Mensagens')"><svg viewBox="0 0 24 24"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"></path><path d="m9 12 2 2 4-4"></path></svg></button>
+    </div>
   </div>
-  <div class="pill">modo de pagamentos</div>
+  <div class="greet" id="greet">Olá, NUBANK</div>
 </header>
 
 <main>
 
-  <div class="warning">Ambiente de demonstração · Nenhuma transferência real é feita.</div>
-
-  <!-- HOME -->
   <section class="view active" id="v-home">
-    <p class="muted" id="greet" style="margin-top:0">Olá, Iago 👋</p>
-    <h1>Seu dinheiro, do seu jeito.</h1>
-    <p class="muted">Veja seu resumo financeiro de teste.</p>
-
-    <div class="card balance-card">
-      <div class="balance-top">
-        <span class="balance-label">Saldo em conta</span>
-        <span class="eye" onclick="tgSaldo()">
-          <svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-        </span>
+    <div class="sb">
+      <div class="sbl">Saldo em conta <span>›</span></div>
+      <div class="saldo" id="saldo">R$ 110.000,00</div>
+      <div style="margin-top:16px">
+        <button class="vinc" onclick="tst('Em breve')"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>Vincular conta</button>
       </div>
-      <div class="balance" id="saldo">R$ 1.250,00</div>
-      <div class="balance-foot">NU Pagamentos S.A. · Conta de demonstração</div>
     </div>
 
-    <h2>Atalhos</h2>
-    <div class="grid">
-      <button class="action" onclick="go('pix')">
-        <svg viewBox="0 0 24 24"><path d="M7 3H4v3M4 3l6 6M17 21h3v-3m0 3-6-6M21 7V4h-3m3 0-6 6M3 17v3h3m-3 0 6-6"></path></svg>
-        <strong>Enviar Pix</strong>
+    <div class="qk">
+      <button onclick="go('pix')">
+        <span class="c"><svg viewBox="0 0 24 24"><path d="M7 3H4v3M4 3l6 6M17 21h3v-3m0 3-6-6M21 7V4h-3m3 0-6 6M3 17v3h3m-3 0 6-6"></path></svg></span>
+        <span>Área Pix e<br>Transferir</span>
       </button>
-      <button class="action" onclick="go('dep')">
-        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
-        <strong>Adicionar saldo</strong>
+      <button onclick="go('pagar')">
+        <span class="c"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18M6 14h4"></path></svg></span>
+        <span>Pagar</span>
       </button>
-      <button class="action" onclick="go('extrato')">
-        <svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8"></path></svg>
-        <strong>Extrato</strong>
+      <button onclick="go('fgts')">
+        <span class="c"><svg viewBox="0 0 24 24"><path d="M3 12h18M5 6h14v12H5z"></path><path d="M8 3v3M12 3v3M16 3v3"></path></svg></span>
+        <span>Pegar<br>emprestado</span>
+        <span class="bd">FGTS</span>
       </button>
-      <button class="action" onclick="go('cartoes')">
-        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path></svg>
-        <strong>Cartões</strong>
+      <button onclick="go('dep')">
+        <span class="c"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M11 18h2"></path></svg></span>
+        <span>Recarga de<br>celular</span>
+      </button>
+      <button onclick="go('cartoes')">
+        <span class="c"><svg viewBox="0 0 24 24"><path d="M3 7h18M5 7v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7"></path><path d="M8 11h8"></path></svg></span>
+        <span>Caixinhas<br>e investimentos</span>
       </button>
     </div>
 
-    <div class="card">
-      <div class="section-head">
-        <h2>Últimas movimentações</h2>
-        <span class="link" onclick="go('extrato')">Ver todas</span>
+    <div class="pl" onclick="go('cartoes')">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path></svg>
+      <span class="t">Meus cartões</span>
+    </div>
+
+    <div class="bn" onclick="tst('Nubank Vida')">
+      <div class="txt">Nubank Vida: seguro a partir de <b>R$4/mês</b>.</div>
+      <svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path><circle cx="12" cy="16" r="1.5" fill="#c98eff"></circle></svg>
+    </div>
+
+    <div class="st">Cartão de crédito</div>
+    <div class="ccsec">
+      <div class="row">
+        <div>
+          <div class="lb">Fatura atual</div>
+          <div class="vl">R$ 0,00</div>
+        </div>
+        <div style="text-align:right">
+          <div class="lb">Limite disponível</div>
+          <div class="vl">R$ 5.000,00</div>
+        </div>
       </div>
-      <div id="recent"></div>
+      <div class="prog"><div class="progb"></div></div>
     </div>
+
+    <div class="st">Últimas movimentações</div>
+    <div id="recent"></div>
   </section>
 
-  <!-- PIX -->
   <section class="view" id="v-pix">
-    <h1>Pix</h1>
-    <p class="muted">Preencha os dados para uma transferência.</p>
-    <div class="card">
-      <div class="form">
-        <div class="field"><label>Nome do destinatário</label><input id="pName" placeholder="Nome completo"></div>
-        <div class="field"><label>CPF ou CNPJ</label><input id="pDoc" placeholder="000.000.000-00" inputmode="numeric"></div>
-        <div class="field"><label>Chave Pix</label><input id="pKey" placeholder="Chave"></div>
-        <div class="field"><label>Instituição</label><input id="pInst" placeholder="Nome do banco"></div>
-        <div class="field"><label>Valor (R$)</label><input id="pVal" type="number" step="0.01" placeholder="0,00" inputmode="decimal"></div>
-        <div class="field"><label>Descrição (opcional)</label><textarea id="pDesc" placeholder="Ex.: divisão do jantar"></textarea></div>
-        <button class="btn" onclick="fazerPix()">Simular envio</button>
-      </div>
-      <p class="muted" style="text-align:center;margin-top:12px;font-size:11px">A operação só altera o saldo guardado neste navegador.</p>
+    <h1>Área Pix</h1>
+    <div class="form">
+      <div class="f"><label>Nome do destinatário</label><input id="pName" placeholder="Nome completo"></div>
+      <div class="f"><label>CPF ou CNPJ do destinatário</label><input id="pDoc" placeholder="000.000.000-00" inputmode="numeric"></div>
+      <div class="f"><label>Chave Pix</label><input id="pKey" placeholder="Chave"></div>
+      <div class="f"><label>Instituição</label><input id="pInst" placeholder="Nome do banco"></div>
+      <div class="f"><label>Valor (R$)</label><input id="pVal" type="number" step="0.01" placeholder="0,00" inputmode="decimal"></div>
+      <div class="f"><label>Descrição</label><textarea id="pDesc" placeholder="Opcional"></textarea></div>
+      <button class="btn" onclick="fazerPix()">Transferir</button>
     </div>
   </section>
 
-  <!-- DEPOSITAR -->
+  <section class="view" id="v-pagar">
+    <h1>Pagar</h1>
+    <div class="form">
+      <div class="f"><label>Tipo</label><select id="pgT"><option>Boleto</option><option>Conta de consumo</option><option>Tributo</option></select></div>
+      <div class="f"><label>Código de barras</label><input id="pgC" placeholder="Código" inputmode="numeric"></div>
+      <div class="f"><label>Beneficiário</label><input id="pgB" placeholder="Nome"></div>
+      <div class="f"><label>Valor (R$)</label><input id="pgV" type="number" step="0.01" placeholder="0,00" inputmode="decimal"></div>
+      <button class="btn" onclick="pagar()">Pagar</button>
+    </div>
+  </section>
+
+  <section class="view" id="v-fgts">
+    <h1>Antecipar FGTS</h1>
+    <div class="form">
+      <div class="pl" style="margin:0 0 16px 0"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span class="t">Saldo disponível: <b id="fgtsS">R$ 3.480,00</b></span></div>
+      <div class="f"><label>Valor a antecipar (R$)</label><input id="fgV" type="number" step="0.01" placeholder="100,00" inputmode="decimal" max="3480"></div>
+      <div class="f"><label>Parcelas</label><select id="fgP"><option value="12">12x com 1,29% a.m.</option><option value="24">24x com 1,39% a.m.</option></select></div>
+      <div class="f"><label>Nome completo</label><input id="fgN" placeholder="Seu nome"></div>
+      <div class="f"><label>CPF</label><input id="fgC" placeholder="000.000.000-00" inputmode="numeric"></div>
+      <button class="btn" onclick="fgtsAntecipar()">Solicitar antecipação</button>
+    </div>
+  </section>
+
   <section class="view" id="v-dep">
-    <h1>Adicionar saldo</h1>
-    <p class="muted">Crie um crédito para testar o aplicativo.</p>
-    <div class="card">
-      <div class="form">
-        <div class="field"><label>Valor (R$)</label><input id="dV" type="number" step="0.01" placeholder="0,00" inputmode="decimal"></div>
-        <div class="field"><label>Descrição</label><input id="dD" placeholder="Ex.: depósito de teste" value="Crédito"></div>
-        <button class="btn" onclick="depositar()">Adicionar saldo</button>
-      </div>
+    <h1>Depositar</h1>
+    <div class="form">
+      <div class="f"><label>Valor (R$)</label><input id="dV" type="number" step="0.01" placeholder="0,00" inputmode="decimal"></div>
+      <div class="f"><label>Descrição</label><input id="dD" placeholder="Ex.: transferência recebida" value="Depósito"></div>
+      <button class="btn" onclick="depositar()">Depositar</button>
     </div>
   </section>
 
-  <!-- EXTRATO -->
   <section class="view" id="v-extrato">
     <h1>Extrato</h1>
-    <p class="muted">Histórico das operações feitas neste dispositivo.</p>
-    <div class="card">
-      <div id="allTx"></div>
-      <button class="btn sec" onclick="exportarCSV()" style="margin-top:16px">Exportar extrato (.csv)</button>
+    <div class="sb"><div class="sbl">Saldo atual</div><div class="saldo" id="saldoEx">R$ 110.000,00</div></div>
+    <div class="form" style="margin-top:16px">
+      <button class="btn sec" onclick="exportarCSV()">Exportar (.csv)</button>
       <button class="btn danger" onclick="limpar()">Apagar histórico</button>
     </div>
+    <div id="allTx"></div>
   </section>
 
-  <!-- CARTÕES -->
   <section class="view" id="v-cartoes">
-    <h1>Cartões</h1>
-    <p class="muted">Seu cartão virtual de demonstração.</p>
-    <div class="card-virtual">
-      <div class="top">
+    <h1>Meus cartões</h1>
+    <div class="crd">
+      <div class="tp">
         <div class="br">nu</div>
         <div class="ch"></div>
       </div>
@@ -216,23 +264,21 @@ nav button.active{color:#fff}
         <div style="text-align:right">Validade<b id="cardE">12/30</b></div>
       </div>
     </div>
-    <button class="btn sec" onclick="gerarCartao()">Gerar novo cartão</button>
-    <button class="btn sec" onclick="tst('Cartão bloqueado temporariamente')">Bloquear cartão</button>
-  </section>
-
-  <!-- PERFIL -->
-  <section class="view" id="v-perfil">
-    <h1>Perfil</h1>
-    <div class="card">
-      <div class="form">
-        <div class="field"><label>Nome de exibição</label><input id="profI" placeholder="Seu nome"></div>
-        <div class="field"><label>Seu CPF/CNPJ</label><input id="profCpf" placeholder="000.000.000-00" inputmode="numeric"></div>
-        <button class="btn" onclick="salvarNome()">Salvar</button>
-        <button class="btn sec" onclick="resetar()" style="margin-top:14px">Restaurar demonstração</button>
-      </div>
+    <div class="form" style="padding:0 18px">
+      <button class="btn sec" onclick="gerarCartao()">Gerar novo cartão</button>
+      <button class="btn sec" onclick="tst('Cartão bloqueado')">Bloquear cartão</button>
     </div>
   </section>
 
+  <section class="view" id="v-perfil">
+    <h1>Perfil</h1>
+    <div class="form">
+      <div class="f"><label>Nome de exibição</label><input id="profI" placeholder="Seu nome"></div>
+      <div class="f"><label>Seu CPF/CNPJ</label><input id="profCpf" placeholder="000.000.000-00" inputmode="numeric"></div>
+      <button class="btn" onclick="salvarNome()">Salvar</button>
+      <button class="btn sec" onclick="resetar()" style="margin-top:16px">Restaurar demonstração</button>
+    </div>
+  </section>
 </main>
 
 <nav>
@@ -250,21 +296,22 @@ nav button.active{color:#fff}
     <div class="bk" onclick="fecharRcp()">← Voltar</div>
     <div class="lg">nu</div>
     <h2 id="rcpT">Comprovante de pagamento</h2>
-    <div class="dt" id="rcpDt"></div>
+    <div class="dt" id="rcpDt">13 FEV 2022</div>
+    <div class="recipient" id="rcpRecipient"></div>
     <div id="rcpBody"></div>
     <div class="box">
       <b>Nu Pagamentos S.A. - Instituição de Pagamento</b>
       <span class="cj">CNPJ 18.236.120/0001-58</span>
       <span class="mt">Código de autenticação:</span>
       <span class="at" id="rcpAt"></span>
-      <span class="mt">Estamos aqui para ajudar se você tiver alguma dúvida.</span>
+      <span class="help">Estamos aqui para ajudar se você tiver alguma dúvida.</span>
       <a class="lk" href="#" onclick="return false">Me ajuda →</a>
     </div>
     <button class="save" onclick="window.print()">Salvar comprovante</button>
   </div>
-          </div><script>
-var K='nbk_original';
-var INIT={saldo:1250,txs:[],nome:'Pessoa Usuária',meuCpf:'',cardN:null,cardE:null};
+                                                   </div><script>
+var K='nbk_v18';
+var INIT={saldo:110000,txs:[],nome:'NUBANK',meuCpf:'',cardN:null,cardE:null,fgts:3480};
 var S=carregar();
 var vis=true;
 var tmr;
@@ -308,7 +355,11 @@ function go(v){
   window.scrollTo(0,0);
 }
 function tgSaldo(){vis=!vis;rb()}
-function rb(){var el=$id('saldo');if(el)el.textContent=vis?money(S.saldo):'••••••'}
+function rb(){
+  var t=vis?money(S.saldo):'••••••';
+  var el=$id('saldo');if(el)el.textContent=t;
+  var el2=$id('saldoEx');if(el2)el2.textContent=t;
+}
 
 function txh(t){
   var i=t.tipo==='c',sg=i?'+ ':'- ';
@@ -316,16 +367,16 @@ function txh(t){
 }
 function rh(){
   var g=$id('greet');
-  if(g)g.textContent='Olá, '+(S.nome&&S.nome.trim()?S.nome.split(' ')[0]:'usuário')+' 👋';
-  var pn=$id('profI');if(pn)pn.value=S.nome||'';
+  if(g)g.textContent='Olá, '+(S.nome&&S.nome.trim()?S.nome:'NUBANK');
+  var pi=$id('profI');if(pi)pi.value=S.nome||'';
   var pc=$id('profCpf');if(pc)pc.value=S.meuCpf||'';
   var ch=$id('cardH');if(ch)ch.textContent=(S.nome||'USUÁRIO').toUpperCase();
   rb();
   var r=S.txs.slice(0,3);
   var bx=$id('recent');
-  if(bx)bx.innerHTML=r.length?r.map(txh).join(''):'<div class="empty">Nenhuma movimentação ainda.<br>Faça um Pix ou adicione saldo.</div>';
+  if(bx)bx.innerHTML=r.length?r.map(txh).join(''):'<div class="empty">Nenhuma movimentação ainda.</div>';
 }
-function re(){var b=$id('allTx');if(b)b.innerHTML=S.txs.length?S.txs.map(txh).join(''):'<div class="empty">Seu extrato está vazio.</div>'}
+function re(){var b=$id('allTx');if(b)b.innerHTML=S.txs.length?S.txs.map(txh).join(''):'<div class="empty">Sem movimentações.</div>'}
 function rc(){
   if(!S.cardN){S.cardN=rCardN();S.cardE=rCardE();salvar()}
   var n=$id('cardNum');if(n)n.textContent=S.cardN;
@@ -338,12 +389,22 @@ function abrirRcp(t){
   if(!t){alert('Erro');return}
   $id('rcpT').textContent=t.tipo==='c'?'Comprovante de recebimento':'Comprovante de pagamento';
   $id('rcpDt').textContent=t.dt||fdt(new Date());
+  var dest=t.nome&&String(t.nome).trim()?t.nome:'';
+  $id('rcpRecipient').textContent=dest?'Para: '+dest:'';
+
   var valorFinal=money(t.vl||0);
   var docFinal=t.desc||t.tit||'Pagamento';
-  var nomePag=(t.pagNome&&String(t.pagNome).trim())?t.pagNome:'Você';
-  var docPag=(t.pagDoc&&String(t.pagDoc).trim()&&t.pagDoc!=='—')?t.pagDoc:'';
+  var nomePag=(t.pagNome&&String(t.pagNome).trim())?t.pagNome:(S.nome||'Você');
+  var docPag=(t.pagDoc&&String(t.pagDoc).trim()&&t.pagDoc!=='—')?t.pagDoc:(S.meuCpf||'');
   var pagFinal=docPag?nomePag+' · '+docPag:nomePag;
-  var linhas=[['Valor',valorFinal],['Documento',docFinal],['Pagador',pagFinal],['Agência','0001'],['Conta','52048981-7']];
+
+  var linhas=[
+    ['Valor',valorFinal],
+    ['Documento',docFinal],
+    ['Pagador',pagFinal],
+    ['Agência','0001'],
+    ['Conta','52048981-7']
+  ];
   var html='';
   for(var i=0;i<linhas.length;i++){
     html+='<div class="row"><span class="l">'+linhas[i][0]+'</span><span class="v">'+esc(linhas[i][1])+'</span></div>';
@@ -356,10 +417,14 @@ function abrirRcp(t){
 function fecharRcp(){$id('rm').className='rcpt'}
 
 function fazerPix(){
-  var n=$id('pName').value.trim(),d=$id('pDoc').value.trim(),k=$id('pKey').value.trim(),inst=$id('pInst').value.trim();
-  var v=Math.round(Number($id('pVal').value)*100)/100,ds=$id('pDesc').value.trim()||'Pix enviado';
+  var n=$id('pName').value.trim();
+  var d=$id('pDoc').value.trim();
+  var k=$id('pKey').value.trim();
+  var inst=$id('pInst').value.trim();
+  var v=Math.round(Number($id('pVal').value)*100)/100;
+  var ds=$id('pDesc').value.trim()||'Pix enviado';
   if(!n||!d||!k||!inst){tst('Preencha todos os campos',1);return}
-  if(!isFinite(v)||v<=0){tst('Informe um valor válido',1);return}
+  if(!isFinite(v)||v<=0){tst('Valor inválido',1);return}
   if(v>S.saldo){tst('Saldo insuficiente',1);return}
   var now=new Date();
   var pagNome=S.nome&&S.nome.trim()?S.nome:'Você';
@@ -368,25 +433,63 @@ function fazerPix(){
   S.saldo=Math.round((S.saldo-v)*100)/100;
   addTx(tx);
   $id('pName').value='';$id('pDoc').value='';$id('pKey').value='';$id('pInst').value='';$id('pVal').value='';$id('pDesc').value='';
-  rh();abrirRcp(tx);tst('Pix enviado com sucesso!');
+  rh();
+  abrirRcp(tx);
+  tst('Pix enviado!');
+}
+function pagar(){
+  var t=$id('pgT').value;
+  var c=$id('pgC').value.trim();
+  var b=$id('pgB').value.trim();
+  var v=Math.round(Number($id('pgV').value)*100)/100;
+  if(!c||!b){tst('Preencha tudo',1);return}
+  if(!isFinite(v)||v<=0){tst('Valor inválido',1);return}
+  if(v>S.saldo){tst('Saldo insuficiente',1);return}
+  var now=new Date();
+  var pagNome=S.nome&&S.nome.trim()?S.nome:'Você';
+  var pagDoc=S.meuCpf&&S.meuCpf.trim()?S.meuCpf:'';
+  var tx={id:nid(),tipo:'d',tit:'Pagamento',sub:b,vl:v,desc:t+' · '+b,dt:fdt(now),hr:fhr(now),nome:b,doc:'',chave:c,inst:t,pagNome:pagNome,pagDoc:pagDoc,at:auth(),rcp:1};
+  S.saldo=Math.round((S.saldo-v)*100)/100;
+  addTx(tx);
+  $id('pgC').value='';$id('pgB').value='';$id('pgV').value='';
+  rh();abrirRcp(tx);tst('Pagamento realizado!');
+}
+function fgtsAntecipar(){
+  var v=Math.round(Number($id('fgV').value)*100)/100;
+  var p=$id('fgP').value;
+  var n=$id('fgN').value.trim();
+  var c=$id('fgC').value.trim();
+  if(!n||!c){tst('Preencha nome e CPF',1);return}
+  if(!isFinite(v)||v<100){tst('Mínimo R$ 100',1);return}
+  if(v>S.fgts){tst('Maior que o saldo',1);return}
+  var now=new Date();
+  S.saldo=Math.round((S.saldo+v)*100)/100;
+  S.fgts=Math.round((S.fgts-v)*100)/100;
+  var tx={id:nid(),tipo:'c',tit:'Antecipação FGTS',sub:n+' · '+p+'x',vl:v,desc:'Antecipação FGTS em '+p+'x',dt:fdt(now),hr:fhr(now),nome:n,doc:c,pagNome:'Caixa Econômica Federal',pagDoc:'00.360.305/0001-04',at:auth(),rcp:1};
+  addTx(tx);
+  $id('fgtsS').textContent=money(S.fgts);
+  $id('fgV').value='';$id('fgN').value='';$id('fgC').value='';
+  rh();abrirRcp(tx);tst('Aprovado!');
 }
 function depositar(){
-  var v=Math.round(Number($id('dV').value)*100)/100,ds=$id('dD').value.trim()||'Crédito';
+  var v=Math.round(Number($id('dV').value)*100)/100;
+  var ds=$id('dD').value.trim()||'Depósito';
   if(!isFinite(v)||v<=0){tst('Valor inválido',1);return}
   var now=new Date();
   S.saldo=Math.round((S.saldo+v)*100)/100;
   var pagNome=S.nome&&S.nome.trim()?S.nome:'Você';
   var pagDoc=S.meuCpf&&S.meuCpf.trim()?S.meuCpf:'';
   addTx({id:nid(),tipo:'c',tit:ds,sub:'Crédito em conta',vl:v,desc:ds,dt:fdt(now),hr:fhr(now),nome:'Você',doc:pagDoc,pagNome:pagNome,pagDoc:pagDoc,at:auth(),rcp:1});
-  $id('dV').value='';$id('dD').value='Crédito';
-  rh();tst('Saldo atualizado.');
+  $id('dV').value='';$id('dD').value='Depósito';
+  rh();tst('Depósito realizado!');
 }
 function gerarCartao(){
   if(!confirm('Gerar novo cartão virtual?'))return;
   S.cardN=rCardN();S.cardE=rCardE();salvar();rc();tst('Novo cartão gerado!');
 }
 function salvarNome(){
-  var n=$id('profI').value.trim(),c=$id('profCpf').value.trim();
+  var n=$id('profI').value.trim();
+  var c=$id('profCpf').value.trim();
   if(!n){tst('Digite um nome',1);return}
   S.nome=n;S.meuCpf=c;salvar();rh();tst('Perfil salvo');
 }
@@ -397,7 +500,9 @@ function limpar(){
 function resetar(){
   if(!confirm('Restaurar demonstração?'))return;
   var c={};for(var k in INIT)c[k]=INIT[k];
-  S=c;salvar();rh();re();rc();tst('Demonstração restaurada');
+  S=c;salvar();rh();re();rc();
+  var f=$id('fgtsS');if(f)f.textContent=money(S.fgts);
+  tst('Demonstração restaurada');
 }
 function exportarCSV(){
   if(!S.txs.length){tst('Nada para exportar',1);return}
@@ -413,10 +518,12 @@ function exportarCSV(){
   setTimeout(function(){URL.revokeObjectURL(u)},1500);
 }
 
-var pDoc=$id('pDoc');if(pDoc)pDoc.addEventListener('input',function(e){e.target.value=fcpf(e.target.value)});
-var pCpf=$id('profCpf');if(pCpf)pCpf.addEventListener('input',function(e){e.target.value=fcpf(e.target.value)});
+var pDocEl=$id('pDoc');if(pDocEl)pDocEl.addEventListener('input',function(e){e.target.value=fcpf(e.target.value)});
+var fgCEl=$id('fgC');if(fgCEl)fgCEl.addEventListener('input',function(e){e.target.value=fcpf(e.target.value)});
+var pCpfEl=$id('profCpf');if(pCpfEl)pCpfEl.addEventListener('input',function(e){e.target.value=fcpf(e.target.value)});
 
+var fgInit=$id('fgtsS');if(fgInit)fgInit.textContent=money(S.fgts);
 rh();re();rc();
 </script>
 </body>
-  </html>
+</html>
